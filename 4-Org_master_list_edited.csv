@@ -1,0 +1,164 @@
+﻿institution_id,name,acronym,region,city,organization_type
+1,Universidad de Cádiz,UCA,ANDALUCÍA,CADIZ,University
+2,Universidad Politécnica de Cartagena,UPCT,MURCIA,CARTAGENA,University
+3,Universidad de Alicante,UA,COMUNIDAD VALENCIANA,ALICANTE,University
+4,Universitat Politècnica de Catalunya · BarcelonaTech,UPC,CATALUÑA,BARCELONA,University
+5,Universidad Nacional de Educación a Distancia,UNED,COMUNIDAD DE MADRID,MADRID,University
+6,Universidad Autónoma de Madrid,UAM,COMUNIDAD DE MADRID,MADRID,University
+7,Universidad de Extremadura,UEX,EXTREMADURA,BADAJOZ,University
+8,Universitat Autònoma de Barcelona,UAB,CATALUÑA,BARCELONA,University
+9,Universidad de Barcelona,UB,CATALUÑA,BARCELONA,University
+10,Universidad de Jaén,UJAEN,ANDALUCÍA,JAEN,University
+11,Universidad de A Coruña,UDC,GALICIA,LA CORUÑA,University
+12,Universitat de les Illes Balears,UIB,ISLAS BALEARES,PALMA DE MALLORCA,University
+13,Universidad Pública de Navarra,UPNA,NAVARRA,NAVARRA,University
+14,Pompeu Fabra University,UPF,CATALUÑA,BARCELONA,University
+15,Universidad Rey Juan Carlos,URJC,COMUNIDAD DE MADRID,MADRID,University
+16,Universidad de Valladolid,UVA,CASTILLA Y LEON,VALLADOLID,University
+17,Universidad Comillas Pontifical,COMILLASUP,COMUNIDAD DE MADRID,MADRID,University
+18,Universidad Pontificia de Salamanca,UPSA,CASTILLA Y LEON,SALAMANCA,University
+19,Universidad de Alcalá,UAH,COMUNIDAD DE MADRID,MADRID,University
+20,Universidad de Girona,UDG,CATALUÑA,GIRONA,University
+21,Universidad de Huelva,UHU,ANDALUCÍA,HUELVA,University
+22,Universidad del País Vasco,EHU,PAÍS VASCO,VIZCAYA,University
+23,Universidad de Lleida,UDL,CATALUÑA,LLEIDA,University
+24,Universidad CEU San Pablo,USPCEU,COMUNIDAD DE MADRID,MADRID,University
+25,Universidad de Zaragoza,UNIZAR,ARAGÓN,ZARAGOZA,University
+26,Universidad de Salamanca,USAL,CASTILLA Y LEON,SALAMANCA,University
+27,Universidad de Santiago de Compostela,USC,GALICIA,LA CORUÑA,University
+28,Universidad Ramon Llull,URL,CATALUÑA,BARCELONA,University
+29,Universidad de Málaga,UMA,ANDALUCÍA,MALAGA,University
+30,Universidad de La Laguna,ULL,ISLAS CANARIAS,SANTA CRUZ DE TENERIFE,University
+31,Universidad de Murcia,UM,MURCIA,MURCIA,University
+32,Universidad de Oviedo,UNIOVI,ASTURIAS,ASTURIAS,University
+33,Universidad de Castilla-La Mancha,UCLM,CASTILLA-LA MANCHA,CIUDAD REAL,University
+34,Universidad de Cordoba,UCO,ANDALUCÍA,CORDOBA,University
+35,Universidad Complutense de Madrid,UCM,COMUNIDAD DE MADRID,MADRID,University
+36,Universidad Politécnica de Madrid,UPM,COMUNIDAD DE MADRID,MADRID,University
+37,Universidad de Sevilla,US,ANDALUCÍA,SEVILLA,University
+38,Universidad Rovira i Virgili​,URV,CATALUÑA,TARRAGONA,University
+39,Mondragon Unibertsitatea,MUN,PAÍS VASCO,GUIPÚZCOA,University
+40,Universidad de Granada,UGR,ANDALUCÍA,GRANADA,University
+41,Universidad de León,UNILEON,CASTILLA Y LEON,LEON,University
+42,Universidad Miguel Hernández,UMH,COMUNIDAD VALENCIANA,ALICANTE,University
+43,Universidad de Cantabria,UNICAN,CANTABRIA,CANTABRIA,University
+44,Universidade de Vigo,UVIGO,GALICIA,PONTEVEDRA,University
+45,Universidad Europea de Madrid,CEU,COMUNIDAD DE MADRID,MADRID,University
+46,Universidad CEU Cardenal Herrera,UCHCEU,COMUNIDAD VALENCIANA,VALENCIA,University
+47,Universitat Politècnica de València,UPV,COMUNIDAD VALENCIANA,VALENCIA,University
+48,Universidad de Valencia,UV,COMUNIDAD VALENCIANA,VALENCIA,University
+49,Universidad de Almería,UAL,ANDALUCÍA,ALMERIA,University
+50,Universidad Carlos III de Madrid,UC3M,MADRID,MADRID,University
+51,Universitat Internacional de Catalunya,UIC,CATALUÑA,BARCELONA,University
+52,Universitat Jaume I,UJI,COMUNIDAD VALENCIANA,CASTELLÓN,University
+53,Universidad de Burgos,UBU,CASTILLA Y LEON,BURGOS,University
+54,Universidad Alfonso X el Sabio,UAX,COMUNIDAD DE MADRID,MADRID,University
+55,IE University,IE,CASTILLA Y LEON,SEGOVIA,University
+56,Universidad Pablo de Olavide,UPO,ANDALUCÍA,SEVILLA,University
+57,Universidad de La Rioja,UNIR,LA RIOJA,LA RIOJA,University
+58,Universitat Oberta de Catalunya,UOC,CATALUÑA,BARCELONA,University
+59,Universidad de Las Palmas de Gran Canaria,ULPGC,ISLAS CANARIAS,LAS PALMAS,University
+60,Universidad de Navarra,UNAV,NAVARRA,NAVARRA,University
+61,Universidad Nebrija,NEBRIJA,COMUNIDAD DE MADRID,MADRID,University
+62,Universidad de Vic,UVIC,CATALUÑA,BARCELONA,University
+63,Hospital Universitario Puerto Real,HUPR,ANDALUCÍA,CADIZ,Hospital
+64,Consorcio Hospital General Universitari de València,CHGUV,COMUNIDAD VALENCIANA,VALENCIA,Hospital
+65,Hospital Sant Joan de Déu Barcelona,SJD,CATALUÑA,BARCELONA,Hospital
+66,Hospital Universitario Nuestra Senora de Candelaria,CHUNSC,ISLAS CANARIAS,SANTA CRUZ DE TENERIFE,Hospital
+67,Universidad Católica de Ávila,UCAVILA,CASTILLA Y LEON,AVILA,University
+68,Universidad Francisco de Vitoria,UFV,COMUNIDAD DE MADRID,MADRID,University
+69,Hospital Clínico Universitario Virgen de la Arrixaca,HCUVA,MURCIA,MURCIA,Hospital
+70,Hospital Universitario de Valme,HUValme,ANDALUCÍA,SEVILLA,Hospital
+71,Hospital Universitario Central de Asturias,HCA,ASTURIAS,ASTURIAS,Hospital
+72,Hospital Universitario Miguel Servet,HUMS,ARAGÓN,ZARAGOZA,Hospital
+73,Hospital Infanta Cristina de Badajoz,HIC,EXTREMADURA,BADAJOZ,Hospital
+74,Complejo Hospitalario Universitario de Vigo,CHUVI,GALICIA,PONTEVEDRA,Hospital
+75,Hospital Universitario Virgen de las Nieves,HVN,ANDALUCÍA,GRANADA,Hospital
+76,Hospital Universitari de Girona Doctor Josep Trueta,HUGDJT,CATALUÑA,GIRONA,Hospital
+77,Hospital Universitario Donostia,HUDonostia,PAÍS VASCO,GUIPÚZCOA,Hospital
+78,Hospital Universitario La Paz,HULP,COMUNIDAD DE MADRID,MADRID,Hospital
+79,Hospital Universitario Reina Sofía de Cordoba,HURS,ANDALUCÍA,CORDOBA,Hospital
+80,Hospital Clínico Universitario Lozano Blesa,HCUZ,ARAGÓN,ZARAGOZA,Hospital
+81,Hospital Universitario Virgen de la Victoria,HUVV,ANDALUCÍA,MALAGA,Hospital
+82,Hospital Universitari Arnau de Vilanova,HUAV,CATALUÑA,LLEIDA,Hospital
+83,Hospital Santa Creu y Sant Pau,HSCSP,CATALUÑA,BARCELONA,Hospital
+84,Hospital del Mar,HdM,CATALUÑA,BARCELONA,Hospital
+85,Universidad a Distancia de Madrid (UDIMA),UDIMA,COMUNIDAD DE MADRID,MADRID,University
+86,Hospital Clínico San Carlos,HCSC,COMUNIDAD DE MADRID,MADRID,Hospital
+87,Hospital Universitari Doctor Peset,HUPeset,COMUNIDAD VALENCIANA,VALENCIA,Hospital
+88,Hospital General Universitario de Alicante,HGUA,COMUNIDAD VALENCIANA,ALICANTE,Hospital
+89,Hospital Clínico Universitario de Santiago,CHUS,GALICIA,LA CORUÑA,Hospital
+90,Hospital Universitario de Badajoz,HUBada,EXTREMADURA,BADAJOZ,Hospital
+91,Hospital Regional Universitario de Málaga,HRUM,ANDALUCÍA,MALAGA,Hospital
+92,Instituto Catalán de Oncología,ICO,CATALUÑA,BARCELONA,Hospital
+93,Miguel de Cervantes European University,UEMC,CASTILLA Y LEON,VALLADOLID,University
+94,Universidad Isabel I,UI1,CASTILLA Y LEON,BURGOS,University
+95,Universidad Loyola Andalucía,ULOYOLA,ANDALUCÍA,SEVILLA,University
+96,Hospital Universitario Puerta de Hierro Majadahonda,HUPHM,COMUNIDAD DE MADRID,MADRID,Hospital
+97,Hospital Infantil Universitario Niño Jesús,HIUNJ,COMUNIDAD DE MADRID,MADRID,Hospital
+98,Hospital Universitario de Guadalajara,HUGU,CASTILLA-LA MANCHA,GUADALAJARA,Hospital
+99,Hospital Universitario 12 de Octubre,HU12O,COMUNIDAD DE MADRID,MADRID,Hospital
+100,Hospital Universitari i Politècnic La Fe,HUPLF,COMUNIDAD VALENCIANA,VALENCIA,Hospital
+101,Hospital General Universitario de Elche,HGUE,COMUNIDAD VALENCIANA,ALICANTE,Hospital
+102,Hospital Universitario de San Juan,HUSJ,COMUNIDAD VALENCIANA,ALICANTE,Hospital
+103,Hospital Universitario Vall d'Hebron,HUVH,CATALUÑA,BARCELONA,Hospital
+104,Hospital Germans Trias i Pujol,HGTP,CATALUÑA,BARCELONA,Hospital
+105,Hospital Universitario de Gran Canaria Dr. Negrín,HUGCDN,ISLAS CANARIAS,LAS PALMAS,Hospital
+106,Hospital Universitario de Getafe,HUG,COMUNIDAD DE MADRID,MADRID,Hospital
+107,Hospital General Universitario Gregorio Maranon,HGUGM,COMUNIDAD DE MADRID,MADRID,Hospital
+108,Hospital Universitario Fundación Jiménez Díaz,FJD,COMUNIDAD DE MADRID,MADRID,Hospital
+109,Complejo Asistencial Universitario de León,CAULe,CASTILLA Y LEON,LEON,Hospital
+110,Universidad Camilo José Cela,UCJC,COMUNIDAD DE MADRID,MADRID,University
+111,Hospital Universitari de Bellvitge,HUBell,CATALUÑA,BARCELONA,Hospital
+112,Universidad Católica de Valencia San Vicente Mártir,UCV,COMUNIDAD VALENCIANA,VALENCIA,University
+113,Universidad Católica San Antonio de Murcia,UCAM,MURCIA,MURCIA,University
+114,Hospital Universitario de La Princesa,HULP,COMUNIDAD DE MADRID,MADRID,Hospital
+115,Hospital Regional de Málaga,HRMalaga,ANDALUCÍA,MALAGA,Hospital
+116,Instituto Valenciano de Oncología,IVO,COMUNIDAD VALENCIANA,VALENCIA,Hospital
+117,Universidad de Deusto,DEUSTO,PAÍS VASCO,VIZCAYA,University
+118,Hospital Universitario Marqués de Valdecilla,HUMV,CANTABRIA,CANTABRIA,Hospital
+119,Complejo Asistencial Universitario de Salamanca,CAUS,CASTILLA Y LEON,SALAMANCA,Hospital
+120,Hospital Universitario Rio Hortega,HURH,CASTILLA Y LEON,VALLADOLID,Hospital
+121,Hospital Universitario de A Coruña,HUCoruña,GALICIA,LA CORUÑA,Hospital
+122,Hospital Universitario de Ceuta,HUCeuta,CEUTA,CEUTA,Hospital
+123,Hospital Universitari Son Espases,HUSE,ISLAS BALEARES,PALMA DE MALLORCA,Hospital
+124,Hospital Universitario de Burgos,HUBurgos,CASTILLA Y LEON,BURGOS,Hospital
+125,Universidad San jorge,USJ,ARAGÓN,ZARAGOZA,University
+126,Hospital General Universitario Morales Meseguer,HGUMM,MURCIA,MURCIA,Hospital
+127,Hospital General Universitario Reina Sofía,HGURS,MURCIA,MURCIA,Hospital
+128,Hospital Universitario Virgen Macarena,HUVM,ANDALUCÍA,SEVILLA,Hospital
+129,Hospital Universitario San Cecilio,HUSC,ANDALUCÍA,GRANADA,Hospital
+130,Hospital Universitario Ramon y Cajal,HURC,COMUNIDAD DE MADRID,MADRID,Hospital
+131,Hospital Universitario Principe de Asturias,HUPA,ASTURIAS,ASTURIAS,Hospital
+132,Hospital Universitario Joan XXIII de Tarragona,HUJXT,CATALUÑA,TARRAGONA,Hospital
+133,Hospital do Meixoeiro,HM,GALICIA,PONTEVEDRA,Hospital
+134,Clínica Universidad de Navarra,CUN,NAVARRA,NAVARRA,Hospital
+135,Hospital General Universitario de Elda Virgen de la Salud,HGUELDA,COMUNIDAD VALENCIANA,ALICANTE,Hospital
+136,Universitat Abat Oliba CEU,UAOCEU,CATALUÑA,BARCELONA,University
+137,Hospital Universitario Puerta del Mar,HUPM,ANDALUCÍA,CADIZ,Hospital
+138,Hospital Universitario Virgen del Rocio,HUVR,ANDALUCÍA,SEVILLA,Hospital
+139,Hospital Clínico Universitario de Valladolid,HCUV,CASTILLA Y LEON,VALLADOLID,Hospital
+140,Hospital Povisa,POVISA,GALICIA,PONTEVEDRA,Hospital
+141,Hospital Carlos III,HULP,COMUNIDAD DE MADRID,MADRID,Hospital
+142,Fundacio Puigvert,FNDPuigvert,CATALUÑA,BARCELONA,Hospital
+143,Hospital Clínic Universitari de València,HCUValencia,COMUNIDAD VALENCIANA,VALENCIA,Hospital
+144,Hospital General Universitario de Albacete,CHUA,CASTILLA-LA MANCHA,ALBACETE,Hospital
+145,Instituto de Investigación Biomédica de Girona Josep Trueta,IDIBGI,CATALUÑA,GIRONA,Hospital
+146,Universidad del Atlántico Medio,UNEATLANTICO,ISLAS CANARIAS,LAS PALMAS,University
+147,Universidad Europea del Atlántico,UNEATLANTICO,CANTABRIA,SANTANDER,University
+148,Hospital Clínic de Barcelona,HCB,CATALUÑA,BARCELONA,Hospital
+149,Hospital Universitario Rey Juan Carlos,HURJC,COMUNIDAD DE MADRID,MADRID,Hospital
+150,Hospital General Universitario de Ciudad Real,HGUCR,CASTILLA-LA MANCHA,CIUDAD REAL,Hospital
+151,ESIC Business & Marketing School,ESIC,COMUNIDAD DE MADRID,MADRID,University
+152,Complejo Hospitalario Universitario Insular - Materno Infantil,CHUIMI,ISLAS CANARIAS,LAS PALMAS,Hospital
+153,Hospital Universitario de Canarias,HUC,ISLAS CANARIAS,SANTA CRUZ DE TENERIFE,Hospital
+154,Hospital Universitari Sant Joan de Reus,HUSJR,CATALUÑA,TARRAGONA,Hospital
+155,Complejo Hospitalario de Navarra,CHNavarra,NAVARRA,NAVARRA,Hospital
+156,Barcelona Graduate School of Economics,BSE,CATALUÑA,BARCELONA,University
+157,Hospital General Universitari de Castelló,HGUCastellon,COMUNIDAD VALENCIANA,CASTELLÓN,Hospital
+158,Universidad Fernando Pessoa-Canarias,UFPC,ISLAS CANARIAS,LAS PALMAS,University
+159,Hospital Universitario Insular de Gran Canaria,CHUI,ISLAS CANARIAS,LAS PALMAS,Hospital
+160,Hospital Universitario de Cruces,HUCruces,PAÍS VASCO,VIZCAYA,Hospital
+161,Universidad Internacional de Valencia,VIU,COMUNIDAD VALENCIANA,VALENCIA,University
+162,Universidad Internacional de Andalucía,UNIA,ANDALUCÍA,SEVILLA,University
+163,Universidad Internacional Menéndez Pelayo,UIMP,COMUNIDAD DE MADRID,MADRID,University
