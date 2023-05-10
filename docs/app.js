@@ -52,7 +52,7 @@ init_doc()
 
 # ### App!
 
-# In[30]:
+# In[60]:
 
 
 import hvplot.pandas
@@ -61,18 +61,14 @@ import pandas as pd
 import holoviews as hv
 import plotly
 from holoviews import opts
-#hvplot.extension('plotly')
 
 
 # #### Data
 
-# In[49]:
+# In[59]:
 
 
 # loading data
-#df = pd.read_table('5-Org_indicators.tsv')
-#ins = pd.read_csv('4-Org_master_list_edited.csv')
-
 data_indicators = ("https://raw.githubusercontent.com/jcantre/influscience-dashboard/main/5-Org_indicators.tsv")
 df = pd.read_table(data_indicators)
 
