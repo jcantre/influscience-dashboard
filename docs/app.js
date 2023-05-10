@@ -15,7 +15,7 @@ async function startApplication() {
   self.pyodide.globals.set("sendPatch", sendPatch);
   console.log("Loaded!");
   await self.pyodide.loadPackage("micropip");
-  const env_spec = ['https://cdn.holoviz.org/panel/0.14.0/dist/wheels/bokeh-2.4.3-py3-none-any.whl', 'https://cdn.holoviz.org/panel/0.14.0/dist/wheels/panel-0.14.0-py3-none-any.whl', 'holoviews>=1.15.1', 'holoviews>=1.15.1', 'hvplot', 'pandas', 'plotly']
+  const env_spec = ['https://cdn.holoviz.org/panel/0.14.4/dist/wheels/bokeh-2.4.3-py3-none-any.whl', 'https://cdn.holoviz.org/panel/0.14.4/dist/wheels/panel-0.14.4-py3-none-any.whl', 'pyodide-http==0.1.0', 'holoviews>=1.15.4', 'holoviews>=1.15.4', 'hvplot', 'pandas', 'plotly']
   for (const pkg of env_spec) {
     let pkg_name;
     if (pkg.endsWith('.whl')) {
@@ -52,25 +52,33 @@ init_doc()
 
 # ### App!
 
-# In[5]:
+# In[30]:
 
 
 import hvplot.pandas
 import panel as pn
 import pandas as pd
 import holoviews as hv
+import plotly
 from holoviews import opts
-hvplot.extension('plotly')
+#hvplot.extension('plotly')
 
 
 # #### Data
 
-# In[6]:
+# In[49]:
 
 
 # loading data
-df = pd.read_table('5-Org_indicators.tsv')
-ins = pd.read_csv('4-Org_master_list_edited.csv')
+#df = pd.read_table('5-Org_indicators.tsv')
+#ins = pd.read_csv('4-Org_master_list_edited.csv')
+
+data_indicators = ("https://raw.githubusercontent.com/jcantre/influscience-dashboard/main/5-Org_indicators.tsv")
+df = pd.read_table(data_indicators)
+
+master_list = ("https://raw.githubusercontent.com/jcantre/influscience-dashboard/main/4-Org_master_list_edited.csv")
+ins = pd.read_csv(master_list)
+
 names = ins['name']
 
 # add university acronyms to df
@@ -110,7 +118,7 @@ df_hospital = df[df.type == 'Hospital']
 
 # #### Interaction Quantity Compare
 
-# In[19]:
+# In[50]:
 
 
 total_to_pub = {'twitter': 'tw_publications', 'altmetric attention score': 'aas_publications', 'policy': 'po_publications', 'wikipedia': 'wp_publications', 'news media': 'nw_publications'}
@@ -135,7 +143,7 @@ int_quant_compare = pn.pane.HoloViews(dmap_int_quant, widgets={
 
 # ##### Modified Dataset
 
-# In[8]:
+# In[51]:
 
 
 df_uni.groupby('esi').sum()
@@ -148,7 +156,7 @@ uni_df = uni_df.fillna(0)
 #uni_df.head()
 
 
-# In[21]:
+# In[52]:
 
 
 mini_df = df_uni[['esi', 'institution_acr', 'altmetric attention score', 'twitter', 'wikipedia', 'news media', 'policy']]
@@ -173,7 +181,7 @@ uni_compare = pn.pane.HoloViews(dmap_uni_compare, widgets={
 
 # #### University Rankings
 
-# In[23]:
+# In[53]:
 
 
 def get_rankings_plot(esi='Global'):
@@ -188,7 +196,7 @@ uni_rankings_overall = pn.pane.HoloViews(dmap_uni_rankings_overall, widgets={'es
 
 # #### University Rankings by Metrics
 
-# In[25]:
+# In[54]:
 
 
 def get_rankings_metric_plot(metric='altmetric attention score', esi='Global'):
@@ -205,7 +213,7 @@ uni_rankings = pn.pane.HoloViews(dmap_uni_rankings, widgets={
 
 # #### Intra-Institutional Comparison
 
-# In[27]:
+# In[55]:
 
 
 def get_uni_plot(uni='UGR'):
@@ -220,7 +228,7 @@ uni_overview = pn.pane.HoloViews(dmap_uni_overview, widgets={'uni': pn.widgets.S
 
 # #### About page
 
-# In[13]:
+# In[56]:
 
 
 #https://panel.holoviz.org/api/panel.pane.html#panel.pane.JPG
@@ -242,7 +250,7 @@ about = pn.pane.HTML('''<h3>About</h3>
 
 # #### Tabs
 
-# In[28]:
+# In[57]:
 
 
 tabs = pn.Tabs(
@@ -259,16 +267,10 @@ tabs = pn.Tabs(
 
 # #### App
 
-# In[29]:
+# In[58]:
 
 
 pn.template.FastListTemplate(site="InfluScience", title="Interactive Dashboard", main=[tabs]).servable();
-
-
-# In[ ]:
-
-
-
 
 
 
