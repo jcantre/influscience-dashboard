@@ -52,22 +52,15 @@ init_doc()
 
 # ### App!
 
-# In[1]:
+# In[80]:
 
 
 import hvplot.pandas
 import panel as pn
 import pandas as pd
 import holoviews as hv
-#import plotly
 from holoviews import opts
 hv.extension('bokeh')
-
-
-# In[ ]:
-
-
-# TODO: fix legend, axes (scales and labels), sum warning in console
 
 
 # #### Data
@@ -121,7 +114,7 @@ df_hospital = df[df.type == 'Hospital']
 
 # #### Interaction Quantity Compare
 
-# In[21]:
+# In[82]:
 
 
 total_to_pub = {'twitter': 'tw_publications', 'altmetric attention score': 'aas_publications', 'policy': 'po_publications', 'wikipedia': 'wp_publications', 'news media': 'nw_publications'}
@@ -129,8 +122,8 @@ mini_df = df_uni[['esi', 'institution_acr', 'altmetric attention score', 'twitte
 
 def get_plot(uni='UB', metric='twitter'):
     df_temp = df_uni[(df_uni.institution_acr == uni)]
-    bar_plot = df_temp.hvplot.bar(x='esi', y=metric, legend='top', label='interactions', xlabel=None)
-    scatter_plot = df_temp.hvplot.scatter(x='esi', y=total_to_pub[metric], c='red', legend='top', label='content quantity', xlabel=None)
+    bar_plot = df_temp.hvplot.bar(x='esi', y=metric, label='interactions', xlabel=None)
+    scatter_plot = df_temp.hvplot.scatter(x='esi', y=total_to_pub[metric], c='red', label='content quantity', xlabel=None)
     plots = bar_plot * scatter_plot
     plots.opts(opts.Overlay(title='Interactions based on Content Quantity', height=500, legend_position='right', ylim=(0, 450000), xrotation=90))
     return plots
@@ -146,21 +139,20 @@ int_quant_compare = pn.pane.HoloViews(dmap_int_quant, widgets={
 
 # ##### Modified Dataset
 
-# In[23]:
+# In[71]:
 
 
-# TODO:  default value of numeric_only in DataFrameGroupBy.sum is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
-df_uni.groupby('esi').sum()
-esi = df_uni.groupby('esi').sum().index.to_list()
-unis = df_uni.groupby('institution_acr').sum().index.to_list()
-ins_df = df_uni.groupby(['institution_acr', 'esi']).sum()[['total']]
+df_uni.groupby('esi').sum(numeric_only=True)
+esi = df_uni.groupby('esi').sum(numeric_only=True).index.to_list()
+unis = df_uni.groupby('institution_acr').sum(numeric_only=True).index.to_list()
+ins_df = df_uni.groupby(['institution_acr', 'esi']).sum(numeric_only=True)[['total']]
 uni_df = ins_df.unstack(level=0)
 uni_df.columns = uni_df.columns.droplevel(0)
 uni_df = uni_df.fillna(0)
 #uni_df.head()
 
 
-# In[24]:
+# In[72]:
 
 
 mini_df = df_uni[['esi', 'institution_acr', 'altmetric attention score', 'twitter', 'wikipedia', 'news media', 'policy']]
@@ -185,7 +177,7 @@ uni_compare = pn.pane.HoloViews(dmap_uni_compare, widgets={
 
 # #### University Rankings
 
-# In[46]:
+# In[73]:
 
 
 def get_rankings_plot(esi='Global'):
@@ -200,7 +192,7 @@ uni_rankings_overall = pn.pane.HoloViews(dmap_uni_rankings_overall, widgets={'es
 
 # #### University Rankings by Metrics
 
-# In[52]:
+# In[74]:
 
 
 def get_rankings_metric_plot(metric='altmetric attention score', esi='Global'):
@@ -217,7 +209,7 @@ uni_rankings = pn.pane.HoloViews(dmap_uni_rankings, widgets={
 
 # #### Intra-Institutional Comparison
 
-# In[59]:
+# In[75]:
 
 
 def get_uni_plot(uni='UGR'):
@@ -232,12 +224,9 @@ uni_overview = pn.pane.HoloViews(dmap_uni_overview, widgets={'uni': pn.widgets.S
 
 # #### About page
 
-# In[56]:
+# In[77]:
 
 
-#https://panel.holoviz.org/api/panel.pane.html#panel.pane.JPG
-
-# placeholder - needs to be pn.pane.something to render in Tabs
 about = pn.pane.HTML('''<h3>About</h3> 
                         <p>The visualizations here were developed using the <a href="https://ranking.influscience.eu/estadisticas-y-datos/" style="color:#36AE7C;">influsciencer2 dataset</a>
                         as part of the <a href="https://influscience.eu/" style="color:#36AE7C;">InfluScience</a> project
@@ -254,7 +243,7 @@ about = pn.pane.HTML('''<h3>About</h3>
 
 # #### Tabs
 
-# In[57]:
+# In[78]:
 
 
 tabs = pn.Tabs(
@@ -271,10 +260,16 @@ tabs = pn.Tabs(
 
 # #### App
 
-# In[58]:
+# In[79]:
 
 
 pn.template.FastListTemplate(site="InfluScience", title="Interactive Dashboard", main=[tabs]).servable();
+
+
+# In[ ]:
+
+
+
 
 
 
