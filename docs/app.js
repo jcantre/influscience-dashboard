@@ -52,7 +52,7 @@ init_doc()
 
 # ### App!
 
-# In[78]:
+# In[1]:
 
 
 import hvplot.pandas
@@ -64,9 +64,15 @@ from holoviews import opts
 hv.extension('bokeh')
 
 
+# In[ ]:
+
+
+# TODO: fix legend, axes (scales and labels), sum warning in console
+
+
 # #### Data
 
-# In[79]:
+# In[2]:
 
 
 # loading data
@@ -115,7 +121,7 @@ df_hospital = df[df.type == 'Hospital']
 
 # #### Interaction Quantity Compare
 
-# In[80]:
+# In[21]:
 
 
 total_to_pub = {'twitter': 'tw_publications', 'altmetric attention score': 'aas_publications', 'policy': 'po_publications', 'wikipedia': 'wp_publications', 'news media': 'nw_publications'}
@@ -123,10 +129,10 @@ mini_df = df_uni[['esi', 'institution_acr', 'altmetric attention score', 'twitte
 
 def get_plot(uni='UB', metric='twitter'):
     df_temp = df_uni[(df_uni.institution_acr == uni)]
-    bar_plot = df_temp.hvplot.bar(x='esi', y=metric, legend='top', label='interactions', xlabel=None) # legend is documented bug
+    bar_plot = df_temp.hvplot.bar(x='esi', y=metric, legend='top', label='interactions', xlabel=None)
     scatter_plot = df_temp.hvplot.scatter(x='esi', y=total_to_pub[metric], c='red', legend='top', label='content quantity', xlabel=None)
     plots = bar_plot * scatter_plot
-    plots.opts(opts.Overlay(title='Interactions based on Content Quantity', xaxis=None, height=500, legend_position='top'))
+    plots.opts(opts.Overlay(title='Interactions based on Content Quantity', height=500, legend_position='right', ylim=(0, 450000), xrotation=90))
     return plots
 
 dmap_int_quant = hv.DynamicMap(get_plot, kdims=['uni', 'metric']).redim.values(uni=list(df_uni.institution_acr.unique()), metric=['altmetric attention score', 'twitter', 'wikipedia', 'news media', 'policy'])
@@ -135,17 +141,15 @@ int_quant_compare = pn.pane.HoloViews(dmap_int_quant, widgets={
     'metric': pn.widgets.Select, 
     'uni': pn.widgets.Select}, center=True).layout
 
-# legend: https://holoviews.org/user_guide/Customizing_Plots.html#legend-customization
-# would have to change to hv plot though
-
 
 # #### University Comparison
 
 # ##### Modified Dataset
 
-# In[82]:
+# In[23]:
 
 
+# TODO:  default value of numeric_only in DataFrameGroupBy.sum is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
 df_uni.groupby('esi').sum()
 esi = df_uni.groupby('esi').sum().index.to_list()
 unis = df_uni.groupby('institution_acr').sum().index.to_list()
@@ -156,7 +160,7 @@ uni_df = uni_df.fillna(0)
 #uni_df.head()
 
 
-# In[86]:
+# In[24]:
 
 
 mini_df = df_uni[['esi', 'institution_acr', 'altmetric attention score', 'twitter', 'wikipedia', 'news media', 'policy']]
@@ -181,7 +185,7 @@ uni_compare = pn.pane.HoloViews(dmap_uni_compare, widgets={
 
 # #### University Rankings
 
-# In[105]:
+# In[46]:
 
 
 def get_rankings_plot(esi='Global'):
@@ -189,14 +193,14 @@ def get_rankings_plot(esi='Global'):
     plot = df_filt.hvplot(x='institution_acr', y=['altmetric attention score', 'twitter', 'wikipedia', 'news media', 'policy'], kind='bar', stacked=True, colorbar=False, width=600, title='University Interactions Across Fields')
     return plot
 
-dmap_uni_rankings_overall = hv.DynamicMap(get_rankings_plot, kdims=['esi']).redim.values(esi=esi).opts(width=800, height=400, ylabel='Interactions', xlabel='', margin=(50, 50, 500, 50))
+dmap_uni_rankings_overall = hv.DynamicMap(get_rankings_plot, kdims=['esi']).redim.values(esi=esi).opts(width=1000, height=400, ylabel='Interactions', xlabel='University', margin=(50, 50, 50, 50), ylim=(0,900000), xrotation=90)
 
 uni_rankings_overall = pn.pane.HoloViews(dmap_uni_rankings_overall, widgets={'esi': pn.widgets.Select}, center=True).layout
 
 
 # #### University Rankings by Metrics
 
-# In[111]:
+# In[52]:
 
 
 def get_rankings_metric_plot(metric='altmetric attention score', esi='Global'):
@@ -204,7 +208,7 @@ def get_rankings_metric_plot(metric='altmetric attention score', esi='Global'):
     plot = df_filt.hvplot(x='institution_acr', y=metric, kind='bar', colorbar=False, width=600, title='University Interactions Across Fields and Metrics')
     return plot
 
-dmap_uni_rankings = hv.DynamicMap(get_rankings_metric_plot, kdims=['metric', 'esi']).redim.values(metric=['altmetric attention score', 'twitter', 'wikipedia', 'news media', 'policy','total'],esi=esi).opts(height=400, width=800, ylabel='Interactions', xlabel='', margin=(50, 50, 500, 50))
+dmap_uni_rankings = hv.DynamicMap(get_rankings_metric_plot, kdims=['metric', 'esi']).redim.values(metric=['altmetric attention score', 'twitter', 'wikipedia', 'news media', 'policy','total'],esi=esi).opts(height=400, width=800, ylabel='Interactions', xlabel='University', margin=(50, 50, 500, 50), xrotation=90, xlim=(0,450000))
 
 uni_rankings = pn.pane.HoloViews(dmap_uni_rankings, widgets={
     'metric': pn.widgets.Select,
@@ -213,7 +217,7 @@ uni_rankings = pn.pane.HoloViews(dmap_uni_rankings, widgets={
 
 # #### Intra-Institutional Comparison
 
-# In[115]:
+# In[59]:
 
 
 def get_uni_plot(uni='UGR'):
@@ -221,7 +225,7 @@ def get_uni_plot(uni='UGR'):
     plot = df_filt.hvplot(x='esi', y=['altmetric attention score', 'twitter', 'wikipedia', 'news media', 'policy'], kind='bar', stacked=True, colorbar=False, width=600, title='Intra-University Comparison')
     return plot
 
-dmap_uni_overview = hv.DynamicMap(get_uni_plot, kdims=['uni']).redim.values(uni=unis).opts(height=400, width=800, ylabel='Interactions', xlabel='', margin=(50, 50, 500, 50))
+dmap_uni_overview = hv.DynamicMap(get_uni_plot, kdims=['uni']).redim.values(uni=unis).opts(height=400, width=800, ylabel='Interactions', xlabel='esi', margin=(50, 50, 500, 50), xrotation=90)
 
 uni_overview = pn.pane.HoloViews(dmap_uni_overview, widgets={'uni': pn.widgets.Select}, center=True).layout
 
