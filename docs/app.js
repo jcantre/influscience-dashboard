@@ -235,7 +235,7 @@ uni_overview = pn.pane.HoloViews(dmap_uni_overview, widgets={'uni': pn.widgets.S
 
 # #### About page
 
-# In[77]:
+# In[82]:
 
 
 about = pn.pane.HTML('''<h3>About</h3> 
@@ -250,12 +250,12 @@ about = pn.pane.HTML('''<h3>About</h3>
                         She spent a semester studying in Granada, Spain through IES Abroad, where she collaborated with the 
                         <a href="https://ec3-research.com/" style="color:#36AE7C;">EC3 Research Group</a>.</p>''',
     style={'background-color': '#F6F6F6'}, width=600, height=400)
-about
+#about
 
 
 # #### Tabs
 
-# In[75]:
+# In[80]:
 
 
 tabs = pn.Tabs(
@@ -272,7 +272,7 @@ tabs = pn.Tabs(
 
 # #### App
 
-# In[11]:
+# In[81]:
 
 
 pn.template.FastListTemplate(site="InfluScience", title="Interactive Dashboard", main=[tabs]).servable();
