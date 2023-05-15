@@ -72,7 +72,7 @@ hv.extension('bokeh')
 
 # #### Data
 
-# In[2]:
+# In[57]:
 
 
 # loading data
@@ -110,7 +110,7 @@ df['type'] = org_type
 
 
 # add total interaction column
-df['total'] = df['total_aas'] + df['total_tw'] + df['total_wp'] + df['total_nw'] + df['total_po']
+df['total'] = df['total_tw'] + df['total_wp'] + df['total_nw'] + df['total_po']
 
 df.rename(columns = {'total_aas':'altmetric attention score', 'total_tw': 'twitter', 'total_wp': 'wikipedia', 'total_nw': 'news media', 'total_po': 'policy'}, inplace = True)
 
@@ -119,15 +119,9 @@ df_uni = df[df.type == 'University']
 df_hospital = df[df.type == 'Hospital']
 
 
-# In[12]:
-
-
-df_uni
-
-
 # #### Interaction Quantity Compare
 
-# In[31]:
+# In[58]:
 
 
 total_to_pub = {'twitter': 'tw_publications', 'altmetric attention score': 'aas_publications', 'policy': 'po_publications', 'wikipedia': 'wp_publications', 'news media': 'nw_publications'}
@@ -149,17 +143,11 @@ int_quant_compare = pn.pane.HoloViews(dmap_int_quant, widgets={
     'uni': pn.widgets.Select}, center=True).layout
 
 
-# In[32]:
-
-
-int_quant_compare
-
-
 # #### University Comparison
 
 # ##### Modified Dataset
 
-# In[4]:
+# In[59]:
 
 
 df_uni.groupby('esi').sum(numeric_only=True)
@@ -172,7 +160,7 @@ uni_df = uni_df.fillna(0)
 #uni_df.head()
 
 
-# In[5]:
+# In[60]:
 
 
 mini_df = df_uni[['esi', 'institution_acr', 'altmetric attention score', 'twitter', 'wikipedia', 'news media', 'policy']]
@@ -197,11 +185,12 @@ uni_compare = pn.pane.HoloViews(dmap_uni_compare, widgets={
 
 # #### University Rankings
 
-# In[36]:
+# In[62]:
 
 
 def get_rankings_plot(esi='Global'):
     df_filt = df_uni[(df_uni.esi == esi)]
+    df_filt.sort_values('total', inplace=True, ascending=False)
     plot = df_filt.hvplot(x='institution_acr', y=['twitter', 'wikipedia', 'news media', 'policy'], kind='bar', stacked=True, colorbar=False, width=600, title='University Interactions Across Fields')
     return plot
 
@@ -212,15 +201,16 @@ uni_rankings_overall = pn.pane.HoloViews(dmap_uni_rankings_overall, widgets={'es
 
 # #### University Rankings by Metrics
 
-# In[7]:
+# In[72]:
 
 
 def get_rankings_metric_plot(metric='altmetric attention score', esi='Global'):
     df_filt = df_uni[(df_uni.esi == esi)]
+    df_filt.sort_values(metric, inplace=True, ascending=False)
     plot = df_filt.hvplot(x='institution_acr', y=metric, kind='bar', colorbar=False, width=600, title='University Interactions Across Fields and Metrics')
     return plot
 
-dmap_uni_rankings = hv.DynamicMap(get_rankings_metric_plot, kdims=['metric', 'esi']).redim.values(metric=['altmetric attention score', 'twitter', 'wikipedia', 'news media', 'policy','total'],esi=esi).opts(height=400, width=800, ylabel='Interactions', xlabel='University', margin=(50, 50, 500, 50), xrotation=90)
+dmap_uni_rankings = hv.DynamicMap(get_rankings_metric_plot, kdims=['metric', 'esi']).redim.values(metric=['altmetric attention score', 'twitter', 'wikipedia', 'news media', 'policy'],esi=esi).opts(height=400, width=800, ylabel='Interactions', xlabel='University', margin=(50, 50, 500, 50), xrotation=90)
 
 uni_rankings = pn.pane.HoloViews(dmap_uni_rankings, widgets={
     'metric': pn.widgets.Select,
@@ -229,11 +219,12 @@ uni_rankings = pn.pane.HoloViews(dmap_uni_rankings, widgets={
 
 # #### Intra-Institutional Comparison
 
-# In[38]:
+# In[69]:
 
 
 def get_uni_plot(uni='UGR'):
     df_filt = df_uni[(df_uni.institution_acr == uni)]
+    df_filt.sort_values('total', inplace=True, ascending=False)
     plot = df_filt.hvplot(x='esi', y=['twitter', 'wikipedia', 'news media', 'policy'], kind='bar', stacked=True, colorbar=False, width=600, title='Intra-University Comparison')
     return plot
 
@@ -244,19 +235,18 @@ uni_overview = pn.pane.HoloViews(dmap_uni_overview, widgets={'uni': pn.widgets.S
 
 # #### About page
 
-# In[9]:
+# In[74]:
 
 
 about = pn.pane.HTML('''<h3>About</h3> 
-                        <p>The visualizations here were developed using the <a href="https://ranking.influscience.eu/estadisticas-y-datos/" style="color:#36AE7C;">influsciencer2 dataset</a>
-                        as part of the <a href="https://influscience.eu/" style="color:#36AE7C;">InfluScience</a> project
-                        as a way to visualize university research interactions across different platforms and disciplines.</p>
+                        <p>The visualizations and data available here are part of the COMPARE (REF: PID2020-117007RA-I00) and InfluScience (REF: PID2019-109127RB-I00) projects. 
+                        Data is available through the InfluScience platform.
+                        More information about COMPARE here: https://compare-project.eu/about/</p>
                         <h3>Author</h3>
                         <h4>Jennifer Cantrell</h4>
                         <p>Jennifer Cantrell is an undergraduate student at the University of Michigan studying Data Science and Spanish.
-                        She spent a semester studying in Granada, Spain, where she collaborated with the 
-                        <a href="https://ec3-research.com/" style="color:#36AE7C;">EC3 Research Group</a> and
-                        InfluScience project.</p>''',
+                        She spent a semester studying in Granada, Spain through IES Abroad, where she collaborated with the 
+                        <a href="https://ec3-research.com/" style="color:#36AE7C;">EC3 Research Group</a>.</p>''',
     style={'background-color': '#F6F6F6'}, width=600, height=400)
 #about
 
