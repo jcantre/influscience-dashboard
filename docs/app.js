@@ -235,20 +235,22 @@ uni_overview = pn.pane.HoloViews(dmap_uni_overview, widgets={'uni': pn.widgets.S
 
 # #### About page
 
-# In[74]:
+# In[77]:
 
 
 about = pn.pane.HTML('''<h3>About</h3> 
                         <p>The visualizations and data available here are part of the COMPARE (REF: PID2020-117007RA-I00) and InfluScience (REF: PID2019-109127RB-I00) projects. 
                         Data is available through the InfluScience platform.
-                        More information about COMPARE here: https://compare-project.eu/about/</p>
+                        More information about COMPARE <a href="https://compare-project.eu/about/" style="color:#36AE7C;">here</a>.
+                        More information about InfluScience <a href="https://influscience.eu/proyecto/" style="color:#36AE7C;">here</a>.
+                        </p>
                         <h3>Author</h3>
                         <h4>Jennifer Cantrell</h4>
                         <p>Jennifer Cantrell is an undergraduate student at the University of Michigan studying Data Science and Spanish.
                         She spent a semester studying in Granada, Spain through IES Abroad, where she collaborated with the 
                         <a href="https://ec3-research.com/" style="color:#36AE7C;">EC3 Research Group</a>.</p>''',
     style={'background-color': '#F6F6F6'}, width=600, height=400)
-#about
+about
 
 
 # #### Tabs
