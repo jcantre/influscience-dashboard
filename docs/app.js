@@ -253,11 +253,11 @@ about = pn.pane.HTML('''<h3>About</h3>
 
 # #### Tabs
 
-# In[10]:
+# In[75]:
 
 
 tabs = pn.Tabs(
-    ('Quantity-Interactions', int_quant_compare),
+    ('Altmetric Indicators', int_quant_compare),
     ('University Comparison', uni_compare),
     ('University Rankings', uni_rankings_overall),
     ('University Rankings by Metric', uni_rankings),
